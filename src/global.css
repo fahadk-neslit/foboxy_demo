@@ -27,3 +27,6 @@ body {
 .body_padding {
   @apply px-[80px];
 }
+.max-body {
+  @apply max-w-[1440px] mx-auto;
+}

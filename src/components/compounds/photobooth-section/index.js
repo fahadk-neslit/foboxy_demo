@@ -21,7 +21,7 @@ function PhotoSection() {
   //   });
 
   return (
-    <div className="flex w-full justify-start relative bg-red-400">
+    <div className="max-body flex w-full justify-start relative bg-red-400">
       <div>
         <div className="absolute top-0 right-[10em] h-[30.813em] w-[31.125em] rounded-2xl overflow-hidden">
           <img src="/assets/svg/big-circle.svg" width="100%" height="100%" />

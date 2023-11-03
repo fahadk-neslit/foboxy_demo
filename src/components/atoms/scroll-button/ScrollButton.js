@@ -44,17 +44,17 @@ function ScrollButton({
           scrollBtn.getBoundingClientRect().right ===
         35
       ) {
-        console.log("====================================");
-        console.log("end transition");
-        console.log("====================================");
-        scrollBtn.classList.remove("custom_transition");
+        if (scrollBtn.classList.contains("custom_transition"))
+          scrollBtn.classList.remove("custom_transition");
       }
     } else {
       if (isScrolled) {
         setIsScrolled(false);
       }
       const scrollBtn = document.querySelector(".scroll_button");
-      scrollBtn.classList.add("custom_transition");
+      if (!scrollBtn.classList.contains("custom_transition")) {
+        scrollBtn.classList.add("custom_transition");
+      }
       scrollBtn.style.transform = `translate(0%,0%)`;
     }
   };
