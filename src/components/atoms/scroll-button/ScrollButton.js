@@ -32,28 +32,24 @@ function ScrollButton({
   const handleScroll = () => {
     const scrollBtn = document.querySelector(".scroll_button");
     if (window.scrollY > 400) {
-      if (!isScrolled) {
-        setIsScrolled(true);
-      }
+      setIsScrolled(true);
       scrollBtn.style.transform = `translate(${
         document.querySelector("body").getBoundingClientRect().width / 2 -
         (scrollBtn?.getBoundingClientRect().width / 2 + 35)
       }px, ${window.scrollY - 200}px`;
       if (
         document.querySelector("body").getBoundingClientRect().width -
-          scrollBtn.getBoundingClientRect().right ===
+          scrollBtn?.getBoundingClientRect().right ===
         35
       ) {
-        if (scrollBtn.classList.contains("custom_transition"))
-          scrollBtn.classList.remove("custom_transition");
+        if (scrollBtn?.classList?.contains("custom_transition"))
+          scrollBtn?.classList?.remove("custom_transition");
       }
     } else {
-      if (isScrolled) {
-        setIsScrolled(false);
-      }
+      setIsScrolled(false);
       const scrollBtn = document.querySelector(".scroll_button");
-      if (!scrollBtn.classList.contains("custom_transition")) {
-        scrollBtn.classList.add("custom_transition");
+      if (!scrollBtn?.classList?.contains("custom_transition")) {
+        scrollBtn?.classList?.add("custom_transition");
       }
       scrollBtn.style.transform = `translate(0%,0%)`;
     }

@@ -1,25 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
-import {
-  motion,
-  useInView,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+
 import React, { useEffect, useRef } from "react";
 
 function PhotoSection() {
-  //   const { scrollY } = useScroll();
-  //   const translateX = -scrollY * 0.5; // Adjust the multiplier for the desired speed
-  //   const scrollRef = useRef(null);
-  //   const inView = useInView({
-  //     root: scrollRef,
-  //     once: true, // Trigger the effect once
-  //   });
-
-  //   useMotionValueEvent(scrollY, "change", (latest) => {
-  //     console.log("Page scroll: ", latest);
-  //   });
-
   return (
     <div className="max-body flex w-full justify-start relative bg-red-400">
       <div>
