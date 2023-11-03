@@ -68,7 +68,7 @@ function ScrollButton({
       }}
     >
       {leftIcon && leftIcon}
-      {!isScrolled && text}
+      {!isScrolled && <span>{text}</span>}
       {rightIcon && rightIcon}
     </button>
   );
