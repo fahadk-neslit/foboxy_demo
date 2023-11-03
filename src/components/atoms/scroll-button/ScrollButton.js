@@ -26,22 +26,20 @@ function ScrollButton({
       const container = document.querySelector("#scroll_button_placeholder");
       setScrollContainer(container.offsetTop);
     });
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", (e) =>
+      handleScroll(e, container.offsetTop)
+    );
   }, []);
 
-  const handleScroll = () => {
+  const handleScroll = (e, containerTop) => {
     const scrollBtn = document.querySelector(".scroll_button");
-    if (window.scrollY > 400) {
+    if (window.scrollY > containerTop - containerTop / 2) {
       setIsScrolled(true);
       scrollBtn.style.transform = `translate(${
-        document.querySelector("body").getBoundingClientRect().width / 2 -
+        window.innerWidth / 2 -
         (scrollBtn?.getBoundingClientRect().width / 2 + 35)
       }px, ${window.scrollY - 200}px`;
-      if (
-        document.querySelector("body").getBoundingClientRect().width -
-          scrollBtn?.getBoundingClientRect().right ===
-        35
-      ) {
+      if (window.innerWidth - scrollBtn?.getBoundingClientRect().right === 35) {
         if (scrollBtn?.classList?.contains("custom_transition"))
           scrollBtn?.classList?.remove("custom_transition");
       }
