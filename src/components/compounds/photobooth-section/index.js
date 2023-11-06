@@ -24,26 +24,23 @@ function PhotoSection() {
         // If scroll is greater than 500, animate to the desired state
         controls2.start({
           transform: "rotate(-20deg) translateX(-100px)",
-          transition: { type: "tween", stiffness: 50, duration: 1 },
+          transition: { type: "tween", stiffness: 100, duration: 1 },
         });
         controls.start({
           transform: "rotate(11deg) translateX(10px)",
-          transition: { type: "tween", stiffness: 50, duration: 1 },
+          transition: { type: "tween", stiffness: 100, duration: 1 },
         });
       } else {
         // Otherwise, go back to the initial state
         controls2.start({
           transform: "rotate(-20deg) translateX(-200px)",
-          transition: { type: "tween", stiffness: 50, duration: 1 },
+          transition: { type: "tween", stiffness: 100, duration: 1 },
         });
         controls.start({
           transform: "rotate(12deg) translateX(200px)",
-          transition: { type: "tween", stiffness: 50, duration: 1 },
+          transition: { type: "tween", stiffness: 100, duration: 1 },
         });
       }
-      console.log("====================================");
-      console.log(window.scrollY + 50, rootHeight);
-      console.log("====================================");
       if (window.scrollY + 50 <= rootHeight) {
         prevScrollValue = window.scrollY;
       }
