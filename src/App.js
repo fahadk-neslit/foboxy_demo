@@ -4,6 +4,7 @@ import CameraPlusIcon from "./assets/svg/camera-plus/CameraPlus";
 import LockIcon from "./assets/svg/lock/Lock";
 import MarkerPinIcon from "./assets/svg/marker-pin/MarkerPin";
 import PhotoSection from "./components/compounds/photobooth-section";
+import Button from "./components/atoms/buttons/Button";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           Lorem ipsum dolor sit amet
         </h2>
         {/* Grid */}
-        <div className="flex flex-row justify-between items-center flex-wrap gap-[46px] max-body body_padding mt-[60px]">
+        <div className="flex  flex-row justify-between items-center flex-wrap gap-[46px] max-body body_padding mt-[60px]">
           <div className="flex flex-row items-center gap-4 max-w-[300px]">
             <div className="p-6 rounded-full flex justify-center items-center bg-[#F7F7F7] mr-[4.5]">
               <CameraPlusIcon />
@@ -142,7 +143,7 @@ function App() {
           className="mt-[60px] w-full max-body"
         />
 
-        <div className=" flex w-full mt-[180px]">
+        <div className=" flex w-full mt-[180px] lg:h-[600px]">
           <PhotoSection />
         </div>
       </div>

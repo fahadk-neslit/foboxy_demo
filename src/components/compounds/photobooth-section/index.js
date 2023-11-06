@@ -12,6 +12,9 @@ function PhotoSection() {
       "#scroll_button_placeholder"
     );
     const standImg = document.querySelector("#stand_img");
+    const rootHeight = document
+      .querySelector("#root")
+      .getBoundingClientRect().height;
     let prevScrollValue = 0;
     const handleScroll = () => {
       if (
@@ -38,7 +41,12 @@ function PhotoSection() {
           transition: { type: "tween", stiffness: 50, duration: 1 },
         });
       }
-      prevScrollValue = window.scrollY;
+      console.log("====================================");
+      console.log(window.scrollY + 50, rootHeight);
+      console.log("====================================");
+      if (window.scrollY + 50 <= rootHeight) {
+        prevScrollValue = window.scrollY;
+      }
     };
     // Add a scroll event listener
     window.addEventListener("scroll", handleScroll);
@@ -52,8 +60,39 @@ function PhotoSection() {
   return (
     <div
       id="images_section"
-      className="max-body flex w-full justify-start relative bg-red-400"
+      className="max-body flex w-full justify-start relative "
     >
+      <div
+        className="hidden lg:flex  justify-between w-full max-body mt-[540px] "
+        style={{ transform: "rotate(3deg)" }}
+      >
+        <Button
+          leftIcon={null}
+          text="Party Fun"
+          className="rounded-2xl min-w-[220px] justify-center bg-secondary"
+        />
+        <Button
+          leftIcon={null}
+          text="Best display"
+          className="rounded-2xl min-w-[220px] justify-center bg-primary"
+        />
+        <Button
+          leftIcon={null}
+          text="Jetzt reservieren"
+          className="rounded-2xl min-w-[220px] justify-center bg-secondary"
+        />
+        <Button
+          leftIcon={null}
+          text="foboxy experience"
+          className="rounded-2xl min-w-[220px] justify-center bg-primary"
+        />
+
+        <Button
+          leftIcon={null}
+          text="Just 2 Clicks"
+          className="rounded-2xl min-w-[220px] justify-center bg-secondary"
+        />
+      </div>
       <div className="hidden lg:flex">
         <div className="absolute top-0 right-[10em] mx-auto h-[34.813em] w-[35.125em] rounded-2xl overflow-hidden">
           <img
@@ -91,7 +130,7 @@ function PhotoSection() {
       {/* left side - the z-index will be above the previous divs */}
       <div>
         <div
-          className="absolute top-0 left-[18em] h-[10em] lg:h-[29.375em] w-[8em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
+          className="absolute top-0 left-[18em] h-[12em] sm:h-[16em] md:h-[22em] lg:h-[29.375em] w-[10em] sm:w-[14em] md:w-[16em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
           style={{ transform: "rotate(-6deg)" }}
         >
           <img
@@ -101,7 +140,7 @@ function PhotoSection() {
           />
         </div>
         <motion.div
-          className="absolute top-0 left-[18em] h-[10em] lg:h-[29.375em] w-[8em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
+          className="absolute top-0 left-[18em] h-[12em] sm:h-[16em] md:h-[22em] lg:h-[29.375em] w-[10em] sm:w-[14em] md:w-[16em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
           initial={{ transform: "rotate(-20deg) translateX(-200px)" }}
           animate={controls2}
           whileInView={{ transform: "rotate(-20deg) translateX(-100px)" }}
@@ -115,7 +154,7 @@ function PhotoSection() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-0 left-[18em] h-[10em] lg:h-[29.375em] w-[8em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
+          className="absolute top-0 left-[18em] h-[12em] sm:h-[16em] md:h-[22em] lg:h-[29.375em] w-[10em] sm:w-[14em] md:w-[16em] lg:w-[20em] rounded-2xl overflow-hidden shadow-2xl"
           initial={{ transform: "rotate(12deg) translateX(200px)" }}
           animate={controls}
           whileInView={{ transform: "rotate(11deg) translateX(10px)" }}
@@ -129,7 +168,7 @@ function PhotoSection() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-0 left-[20em] h-[6.813em] w-[8em]"
+          className="hidden lg:block absolute top-0 left-[20em] h-[6.813em] w-[8em]"
           initial={{ transform: "rotate(20deg) translateX(300px)" }}
           whileInView={{ transform: "rotate(11deg) translateX(280px)" }}
           //   whileHover={{ transform: "rotate(11deg) translateX(290px)" }}

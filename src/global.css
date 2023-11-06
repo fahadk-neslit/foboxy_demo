@@ -18,7 +18,7 @@ body {
 }
 
 .filled_button {
-  @apply flex items-center text-white gap-2 py-2 px-4 bg-primary max-w-[200px] max-h-[200px] rounded-3xl custom_transition hover:bg-darkOrange hover:text-white;
+  @apply flex items-center text-white gap-2 py-2 px-4 max-h-[200px] custom_transition hover:text-white;
 }
 .scroll_button {
   @apply flex items-center justify-center text-white gap-2 min-h-[50px] min-w-[50px] bg-primary max-w-[200px] max-h-[80px] rounded-full hover:bg-darkOrange hover:text-white;
