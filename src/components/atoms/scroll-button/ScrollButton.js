@@ -35,6 +35,9 @@ function ScrollButton({
       "#scroll_button_placeholder"
     );
 
+    console.log("====================================");
+    console.log(window.scrollY, scrollBtnPlaceholder.offsetTop / 3);
+    console.log("====================================");
     if (window.scrollY > scrollBtnPlaceholder.offsetTop / 3) {
       setIsScrolled(true);
 

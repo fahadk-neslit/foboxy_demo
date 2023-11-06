@@ -17,7 +17,7 @@ function App() {
           Lorem ipsum dolor sit amet
         </h2>
         {/* Grid */}
-        <div className=" flex flex-row justify-between items-center flex-wrap gap-[46px] max-body body_padding mt-[60px]">
+        <div className="flex flex-row justify-between items-center flex-wrap gap-[46px] max-body body_padding mt-[60px]">
           <div className="flex flex-row items-center gap-4 max-w-[300px]">
             <div className="p-6 rounded-full flex justify-center items-center bg-[#F7F7F7] mr-[4.5]">
               <CameraPlusIcon />
