@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 function PhotoSection() {
   return (
     <div className="max-body flex w-full justify-start relative bg-red-400">
-      <div>
+      <div className="hidden lg:flex">
         <div className="absolute top-0 right-[10em] h-[34.813em] w-[35.125em] rounded-2xl overflow-hidden">
           <img
             src="/assets/svg/big-circle.svg"

@@ -22,24 +22,33 @@ function ScrollButton({
   useEffect(() => {
     const container = document.querySelector("#scroll_button_placeholder");
     setScrollContainer(container.offsetTop);
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", () => {
       const container = document.querySelector("#scroll_button_placeholder");
       setScrollContainer(container.offsetTop);
     });
-    window.addEventListener("scroll", (e) =>
-      handleScroll(e, container.offsetTop)
-    );
   }, []);
 
-  const handleScroll = (e, containerTop) => {
+  const handleScroll = () => {
     const scrollBtn = document.querySelector(".scroll_button");
-    if (window.scrollY > containerTop - containerTop / 2) {
+    const scrollBtnPlaceholder = document.querySelector(
+      "#scroll_button_placeholder"
+    );
+
+    if (window.scrollY > scrollBtnPlaceholder.offsetTop / 3) {
       setIsScrolled(true);
+
       scrollBtn.style.transform = `translate(${
-        window.innerWidth / 2 -
-        (scrollBtn?.getBoundingClientRect().width / 2 + 35)
-      }px, ${window.scrollY - 200}px`;
-      if (window.innerWidth - scrollBtn?.getBoundingClientRect().right === 35) {
+        scrollBtnPlaceholder.offsetWidth / 2 -
+        (scrollBtn?.getBoundingClientRect().width / 2 + 80)
+      }px, ${
+        window.innerHeight -
+        scrollBtnPlaceholder.offsetTop -
+        80 +
+        window.scrollY
+      }px`;
+
+      if (window.innerWidth - scrollBtn?.getBoundingClientRect().right === 80) {
         if (scrollBtn?.classList?.contains("custom_transition"))
           scrollBtn?.classList?.remove("custom_transition");
       }

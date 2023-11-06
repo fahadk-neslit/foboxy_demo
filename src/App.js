@@ -137,7 +137,10 @@ function App() {
           </div>
         </div>
 
-        <div id="scroll_button_placeholder" className="mt-[60px] w-full" />
+        <div
+          id="scroll_button_placeholder"
+          className="mt-[60px] w-full max-body"
+        />
 
         <div className=" flex w-full mt-[180px]">
           <PhotoSection />
